@@ -43,6 +43,7 @@
                         <form method="post">
                             <%= listaDisciplinas.getList().get(i).getNota()%>
                             <input type="number" name="nota" value="0.0" step="0.1" max="10" min="0" required/>
+                            <input type="submit" name="alterar" value="Alterar Nota"/>
                             <input type="hidden" name="i" value ="<%=i%>"/>
                         </form>
                     </td>
