@@ -1,4 +1,19 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="p1.poo.fatecpg.ads.noite.Disciplinas" %>
+
+<%
+    Disciplinas listaDisciplinas = null;
+    try{
+        listaDisciplinas = (Disciplinas) application.getAttribute("listaDisciplinas");
+    }catch (Exception e){
+    }
+    if(request.getParameter ("alterar") != null){
+        int i = Integer.parseInt(request.getParameter ("i"));
+        float nota = Float.parseFloat(request.getParameter ("nota"));
+        listaDisciplinas.getList().get(i).setNota(nota);
+        response.sendRedirect(request.getContextPath()+"/disciplinas.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +41,7 @@
                     
                     <td>
                         <form method="post">
-                            <%= listaDisciplinas.getList().get(i).getNota<()%></td>
+                            <%= listaDisciplinas.getList().get(i).getNota<()%>
                             <input type="number" nome="nota" value="0.0" step="0.1" max="10" min="0" required/>
                             <input type="submit" nome alterar value="Alterar Nota"/>
                             <input type="hidden" name="i" value ="<%=i%>"/>
