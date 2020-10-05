@@ -25,7 +25,7 @@
     }else{
         application.setAttribute("listaDisciplinas", listaDisciplinas);
     }
-
+    
 %>
 <!DOCTYPE html>
 <html>
@@ -34,9 +34,10 @@
         <title>P1 POO Fatec PG</title>
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/menu.jspf"%>
         <h1>Página Inicial</h1>
         <p>Nome: João Paulo Garcia Silva</p>
         <p>RA:1290481913021</p>
-        <p>Disciplinas Matriculadas: </p>
+        <p>Disciplinas Matriculadas: <%=listaDisciplinas.getList().size()%> </p>
     </body>
 </html>
